@@ -4,7 +4,7 @@ const cssLogin = StyleSheet.create({
     content: {
         backgroundColor: '#fff',
         alignItems: 'center',
-        minHeight: 1000
+        minHeight: 600
     },
     container: {
         marginLeft: 15,

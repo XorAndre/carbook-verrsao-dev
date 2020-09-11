@@ -8,12 +8,15 @@ import {
     Button,
     Image,
 } from 'react-native';
+//Meus Componentes
+import Header from '../../Components/Header'
 //Meu estilo
 import { cssHome } from '../../assets/Styles/Home'
 
-export default function Home({navigation}) {
+export default function Comercial({navigation}) {
   return (
     <View style={cssHome.content}>
+      <Header/>
       <View style={cssHome.main}>
           <View style={cssHome.container}>
               <View style={cssHome.row}>
@@ -28,7 +31,7 @@ export default function Home({navigation}) {
                     />
                   </View>
                   <View style={cssHome.Right}>
-                      <Text style={cssHome.cardTitle}>Meu Carro 1</Text>
+                      <Text style={cssHome.cardTitle}>Teste de cadastro</Text>
                       <Text style={cssHome.descriptionCard}>Carro cor braca branca cadastrada</Text>
                       <Text style={cssHome.dataCard}>Data: </Text>
                   </View>
@@ -45,7 +48,7 @@ export default function Home({navigation}) {
                     />
                   </View>
                   <View style={cssHome.Right}>
-                      <Text style={cssHome.cardTitle}>Meu carro 2</Text>
+                      <Text style={cssHome.cardTitle}>Teste de cadastro 2</Text>
                       <Text style={cssHome.descriptionCard}>Carro cor braca branca cadastrada</Text>
                       <Text style={cssHome.dataCard}>Data: </Text>
                   </View>
@@ -62,7 +65,7 @@ export default function Home({navigation}) {
                     />
                   </View>
                   <View style={cssHome.Right}>
-                      <Text style={cssHome.cardTitle}>Meu carro 3</Text>
+                      <Text style={cssHome.cardTitle}>Teste de cadastro 3</Text>
                       <Text style={cssHome.descriptionCard}>Carro cor braca branca cadastrada</Text>
                       <Text style={cssHome.dataCard}>Data: </Text>
                   </View>

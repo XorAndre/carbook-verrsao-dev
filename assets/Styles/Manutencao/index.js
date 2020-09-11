@@ -20,7 +20,7 @@ const cssHome = StyleSheet.create({
     card: {
         backgroundColor: '#fff',
         borderRadius: 5,
-        flexDirection: 'row',
+        flexDirection: 'column',
         marginTop: 5,
         paddingBottom: 6,
         paddingLeft: 8,
