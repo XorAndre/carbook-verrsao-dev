@@ -1,4 +1,0 @@
-usuario: ba2afed9ef0dbf
-senha: 263859ed
-servidor: us-cdbr-east-02.cleardb.com
-dbname: heroku_90e1c72ed8eb84e
