@@ -1,8 +1,9 @@
 import {StyleSheet} from "react-native";
 
-const cssMenu = StyleSheet.create({
-    corMenu: {
-        backgroundColor: '#34495e',
+const css = StyleSheet.create({
+    area_tab: {
+        backgroundColor: '#fff',
+        color: '#333'
     }
 });
-export {cssMenu};
+export {css};

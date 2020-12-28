@@ -5,7 +5,7 @@ const Template = style.View`
     min-height: 790px;
 `;
 const Meio = style.View`
-    margin-top: 20px;
+    margin-top: 60px;
 `;
 
 export{

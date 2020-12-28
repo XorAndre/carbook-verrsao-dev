@@ -1,15 +1,14 @@
 import style from 'styled-components/native'
 
 const Template = style.View`
-    width: 100%;
+    background-color: #f7f8ff;
+    min-height: 790px;
 `;
-const Content = style.View`
-    margin-left: 10px;
-    margin-right: 10px;
-    width: 94%;
+const Meio = style.View`
+    margin-top: 20px;
 `;
 
 export{
-    Template,
-    Content
+    Meio,
+    Template
 }

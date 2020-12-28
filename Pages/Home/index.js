@@ -1,85 +1,69 @@
 import { StatusBar } from 'expo-status-bar';
-import React, { useEffect, useState } from 'react';
-import { TouchableOpacity, ActivityIndicator, FlatList } from 'react-native';
+import React from 'react';
+import { Button, Card, DataTable, Paragraph, Title } from 'react-native-paper';
 //Componentes
 import{
-    Column,
-    Row
-}from '../../Components/Grid/style'
-import{
-    CardRow,
-    CardContainerRow,
-    Left,
-    Right,
-    ImageRow,
-    TitleCard,
-    DescriptionCard,
-    DataCard
-}from '../../Components/Card/style'
-
-import{
   Template,
-  Content
+  Meio
 } from './style'
 import{
-  TopoPage,
   Container,
-  Name
-} from '../../Components/Topo/style'
+  Col,
+  RowColumn
+} from '../../components/Grids'
+import { ButtonLogin, CleanText } from '../../components/Buttons';
 
-export default function Home({navigation}) {
-    const [isLoading, setLoading] = useState(true);
-    const [data, setData] = useState([]);
 
-    useEffect(() => {
-    fetch('https://xorandre.github.io/api_car/carros.json')
-        .then((response) => response.json())
-        .then((json) => setData(json.carros))
-        .catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-    }, []);
+const Home = ({navigation}) => {
   return (
-      <Template>
-        <TopoPage>
-          <Container>
-            <Name>Meus Registros</Name>
-          </Container>
-        </TopoPage>
-        <Content>
-            <Row>
-                {isLoading ? <ActivityIndicator/> : (
-                <FlatList
-                    data={data}
-                    keyExtractor={({ id }, index) => id}
-                    renderItem={({ item }) => (
-                        <Column Value="12">
-                            <TouchableOpacity onPress={() => navigation.navigate('Dados')}>
-                                <CardRow>
-                                    <CardContainerRow>
-                                        <Left>
-                                            <ImageRow
-                                                source={{
-                                                    uri: 'https://static.wixstatic.com/media/6a91d9_790bd43a496c4041a2c8be72369aaac4~mv2.png/v1/fill/w_560,h_312,al_c,lg_1,q_85/vantagens-carro.webp',
-                                                }}
-                                            />
-                                        </Left>
-                                        <Right>
-                                            <TitleCard>{item.title}</TitleCard>
-                                            <DescriptionCard>
-                                                Valor: {item.valorAtual}
-                                            </DescriptionCard>
-                                            <DataCard>Data publicação: {item.dataCadastro}</DataCard>
-                                        </Right>
-                                    </CardContainerRow>
-                                </CardRow>
-                            </TouchableOpacity>
-                        </Column>
-                    )}
+    <Template>
+      <Meio>
+        <Container>
+          <RowColumn>
+            <Col Value="12">
+              <Card>
+                <Card.Actions>
+                  <Button>Cadastrar novo veículo</Button>
+                </Card.Actions>
+                <Card.Content>
+                <DataTable>
+                    <DataTable.Header>
+                      <DataTable.Title>Modelo</DataTable.Title>
+                      <DataTable.Title>Foto</DataTable.Title>
+                      <DataTable.Title>Data de cadastro</DataTable.Title>
+                      <DataTable.Title>Ações</DataTable.Title>
+                    </DataTable.Header>
+
+                    <DataTable.Row>
+                      <DataTable.Cell>Informação exemplo</DataTable.Cell>
+                      <DataTable.Cell>Informação exemplo</DataTable.Cell>
+                      <DataTable.Cell>Informação exemplo</DataTable.Cell>
+                      <DataTable.Cell>
+                        <ButtonLogin>
+                          <CleanText>Editar</CleanText>
+                        </ButtonLogin>
+                      </DataTable.Cell>
+                    </DataTable.Row>
+
+                    <DataTable.Pagination
+                      page={1}
+                      numberOfPages={3}
+                      onPageChange={page => {
+                        console.log(page);
+                      }}
+                      label="1-2 of 6"
                     />
-                )}
-            </Row>
-        </Content>
-        <StatusBar style="auto" />
-      </Template>
+                  </DataTable>
+                </Card.Content>
+              </Card>
+            </Col>
+          </RowColumn>
+        </Container>
+      </Meio>
+      <StatusBar style="auto" />
+    </Template>
   );
 }
+
+export default Home;
+

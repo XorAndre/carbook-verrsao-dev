@@ -14,7 +14,7 @@ import{
 } from '../../components/Grids'
 
 
-const Social = ({navigation}) => {
+const Lojas = () => {
   return (
     <Template>
       <Meio>
@@ -41,5 +41,5 @@ const Social = ({navigation}) => {
   );
 }
 
-export default Social;
+export default Lojas;
 

@@ -19,6 +19,14 @@
     "ios": {
       "supportsTablet": true
     },
+    "android": {
+      "adaptiveIcon": {
+        "foregroundImage": "./assets/adaptive-icon.png",
+        "backgroundColor": "#FFFFFF"
+      },
+      "package": "com.carbook.appcarbook",
+      "versionCode": 1
+    },
     "web": {
       "favicon": "./assets/favicon.png"
     }
